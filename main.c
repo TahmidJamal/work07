@@ -27,8 +27,9 @@ int main() {
 	printf("Printing Node1 \n");
 	print_list(Node1);
 	printf("\n");
-	printf("free_list(Node) should result in Node1 printing different values after initial value;\n");
-	free_list(Node);
-	print_list(Node1); 
+	printf("free_list(Node);\n");
+	Node = free_list(Node);
+	printf("Printing Node, should be nothing\n");
+	print_list(Node); 
 	return 0;
 }

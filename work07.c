@@ -17,10 +17,11 @@ struct node * insert_front(struct node *head, int n) {
 }
 
 struct node * free_list(struct node *head) { 
-	while(head) {
-		struct node *temp = head->next;
+	struct node *temp = head;
+	while(head->next) {
+		struct node *next_guy = head->next;
 		free(head);
-		head = temp;
+		head = next_guy;
 	}
-	return head;
+	return NULL;
 }
